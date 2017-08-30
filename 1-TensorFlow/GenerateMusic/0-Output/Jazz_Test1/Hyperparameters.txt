@@ -1,0 +1,21 @@
+songs = get_songs('JAzz_Music_Midi')
+
+#### Step 1 - HyperParameters
+
+lowest_note = midi_manipulation.lowerBound
+highest_note = midi_manipulation.upperBound
+note_range = highest_note-lowest_note
+
+# This is the number of timesteps that we will create at a time
+num_timesteps = 30
+# This is the size of the visible layer.
+n_visible = 2 * note_range * num_timesteps
+# This is the size of the hidden layer
+n_hidden = 50
+# This is the number of training epochs that are going to run.
+#For each epoch we go through the entire data set.
+num_epochs = 300
+# The number of training examples that we are going to send through
+batch_size = 100
+# The learning rate of our model
+lr = tf.constant(0.005, tf.float32)
